@@ -17,7 +17,7 @@ public class ServiceJoueur implements IServiceJoueur {
 
     @Override
     public Set<JoueurDTO> listerJoueurs() {
-        return listerJoueurs();
+        return listeJoueurs;
     }
 
     @Override
