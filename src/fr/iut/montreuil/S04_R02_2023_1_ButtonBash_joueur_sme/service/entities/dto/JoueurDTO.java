@@ -2,12 +2,16 @@ package fr.iut.montreuil.S04_R02_2023_1_ButtonBash_joueur_sme.service.entities.d
 
 public class JoueurDTO {
     private String pseudo;
-    private int score;
+
+    private StatJoueur statJoueur;
 
     public JoueurDTO(String pseudo) {
         this.pseudo = pseudo;
-    }
+        this.statJoueur = new StatJoueur();
 
+
+
+    }
     //getters and setters
     public String getPseudo() {
         return pseudo;
@@ -15,10 +19,8 @@ public class JoueurDTO {
     public void setPseudo(String pseudo) {
         this.pseudo = pseudo;
     }
-    public int getScore() {
-        return score;
-    }
-    public void setScore(int score) {
-        this.score = score;
+
+    public StatJoueur getStatJoueur() {
+        return statJoueur;
     }
 }

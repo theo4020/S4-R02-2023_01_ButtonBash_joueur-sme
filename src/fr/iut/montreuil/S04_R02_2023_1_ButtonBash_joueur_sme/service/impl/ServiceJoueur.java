@@ -15,17 +15,17 @@ public class ServiceJoueur implements IServiceJoueur {
         listeJoueurs = new HashSet<>();
     }
 
-    @Override
+
     public Set<JoueurDTO> listerJoueurs() {
         return listeJoueurs;
     }
 
-    @Override
+
     public void addJoueur(JoueurDTO joueur) {
         listeJoueurs.add(joueur);
     }
 
-    @Override
+
     public String getInfoJoueur(String pseudo) {
         JoueurDTO joueur = listeJoueurs.stream().filter(j -> j.getPseudo().equals(pseudo)).findFirst().orElse(null);
         if (joueur == null) {
@@ -34,14 +34,14 @@ public class ServiceJoueur implements IServiceJoueur {
         return joueur.toString();
     }
 
-    @Override
+
     public void gestionScoreJoueur(JoueurDTO joueur, int value) {
-        joueur.setScore(joueur.getScore() + value);
+        joueur.getStatJoueur().addScore(value);
     }
 
     @Override
     public void deleteJoueur(JoueurDTO joueur) {
-
+        listeJoueurs.remove(joueur);
     }
 
     @Override
@@ -57,5 +57,9 @@ public class ServiceJoueur implements IServiceJoueur {
     @Override
     public Collection<JoueurDTO> getClassement() {
         return null;
+    }
+
+    public void setListeJoueurs(Set<JoueurDTO> listeJoueurs) {
+        this.listeJoueurs = listeJoueurs;
     }
 }
