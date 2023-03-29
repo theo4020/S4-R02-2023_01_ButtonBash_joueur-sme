@@ -34,11 +34,6 @@ public class ServiceJoueur implements IServiceJoueur {
         return joueur.toString();
     }
 
-
-    public void gestionScoreJoueur(JoueurDTO joueur, int value) {
-        joueur.getStatJoueur().addScore(value);
-    }
-
     @Override
     public void deleteJoueur(JoueurDTO joueur) {
         listeJoueurs.remove(joueur);
@@ -49,14 +44,8 @@ public class ServiceJoueur implements IServiceJoueur {
         return null;
     }
 
-    @Override
     public StatJoueur getStatJoueur(JoueurDTO joueur) {
-        return null;
-    }
-
-    @Override
-    public Collection<JoueurDTO> getClassement() {
-        return null;
+        return joueur.getStatJoueur();
     }
 
     public void setListeJoueurs(Set<JoueurDTO> listeJoueurs) {

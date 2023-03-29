@@ -1,18 +1,51 @@
 package fr.iut.montreuil.S04_R02_2023_1_ButtonBash_joueur_sme.service.entities.dto;
 
 public class StatJoueur {
-    private int score;
+    private int nbPartie;
+    private int nbBonneReponse;
+    private int nbQuestionRepondu;
+    private Parties parties;
+
     public StatJoueur (){
-        score = 0;
+        nbPartie = 0;
+        nbBonneReponse = 0;
+        nbQuestionRepondu = 0;
+        parties = new Parties();
     }
 
-    public int getScore() {
-        return score;
+    public int getNbPartie() {
+        return nbPartie;
     }
-    public void setScore(int score) {
-        this.score = score;
+
+    public void addNbPartie() {
+        this.nbPartie++;
     }
-    public void addScore(int score) {
-        this.score += score;
+
+    public int getNbBonneReponse() {
+        return nbBonneReponse;
+    }
+
+    public void addNbBonneReponse(int nbBonneReponse) {
+        this.nbBonneReponse += nbBonneReponse;
+    }
+
+    public int getNbQuestionRepondu() {
+        return nbQuestionRepondu;
+    }
+
+    public void addNbQuestionRepondu(int nbQuestionRepondu) {
+        this.nbQuestionRepondu += nbQuestionRepondu;
+    }
+
+    public Parties getParties() {
+        return parties;
+    }
+
+    public int getMoyenne(){
+        return (nbBonneReponse/nbQuestionRepondu);
+    }
+
+    public int getMoyenneTemps(){
+        return (parties.getTempsPartie()/nbPartie);
     }
 }
