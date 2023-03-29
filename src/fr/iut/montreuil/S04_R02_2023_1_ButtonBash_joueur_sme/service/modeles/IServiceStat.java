@@ -7,4 +7,8 @@ import java.util.Collection;
 public interface IServiceStat {
     public Collection<StatJoueur> getClassement(Collection<StatJoueur> listStatJoueur);
     public void PrintTop3(Collection<StatJoueur> listStatJoueur);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/Dev

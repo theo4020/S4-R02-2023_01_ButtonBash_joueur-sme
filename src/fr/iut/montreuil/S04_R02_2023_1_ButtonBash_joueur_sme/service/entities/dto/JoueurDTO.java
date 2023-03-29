@@ -4,13 +4,12 @@ public class JoueurDTO {
     private String pseudo;
 
     private StatJoueur statJoueur;
+    private StatParties statPartie;
 
     public JoueurDTO(String pseudo) {
         this.pseudo = pseudo;
         this.statJoueur = new StatJoueur();
-
-
-
+        this.statPartie = new StatParties();
     }
     //getters and setters
     public String getPseudo() {
