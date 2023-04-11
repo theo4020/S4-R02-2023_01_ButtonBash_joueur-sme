@@ -48,4 +48,6 @@ public class StatJoueur {
     public int getMoyenneTemps(){
         return (parties.getTempsPartie()/nbPartie);
     }
+
+
 }
