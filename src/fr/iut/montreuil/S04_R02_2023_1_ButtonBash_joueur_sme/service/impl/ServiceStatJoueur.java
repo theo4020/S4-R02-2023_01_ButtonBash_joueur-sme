@@ -4,8 +4,10 @@ import fr.iut.montreuil.S04_R02_2023_1_ButtonBash_joueur_sme.service.entities.dt
 import fr.iut.montreuil.S04_R02_2023_1_ButtonBash_joueur_sme.service.entities.dto.StatJoueur;
 import fr.iut.montreuil.S04_R02_2023_1_ButtonBash_joueur_sme.service.modeles.IServiceStat;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 
 public class ServiceStatJoueur implements IServiceStat {
 
@@ -27,15 +29,17 @@ public class ServiceStatJoueur implements IServiceStat {
     }
 
     @Override
-    public void PrintTop3(Collection<StatJoueur> listStatJoueur) {
+    public ArrayList<StatJoueur> getTop3(Collection<StatJoueur> listStatJoueur) {
         Collection<StatJoueur> classement = getClassement(listStatJoueur);
+        ArrayList<StatJoueur> top3 = new ArrayList<StatJoueur>();
         int i = 0;
         for (StatJoueur statJoueur : classement) {
             if (i < 3) {
-                System.out.println(statJoueur.toString());
+                top3.add(statJoueur);
             }
             i++;
         }
+        return top3;
     }
 
     public LinkedList<Parties> getListParties(Parties parties) {
